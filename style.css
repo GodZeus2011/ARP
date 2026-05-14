@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'Horizon-r'; 
+  src: url('font/Horizon_Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+    --royal-purple: #702963;
+    --royal-gold: #FFD700;
+    --off-white: #F8F9FA;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: var(--off-white);
+}
+
+/* BRANDING & HEADERS */
+h1, h2, h3, .brand, .nav-links a, .submit-btn {
+    font-family: 'Horizon-r', sans-serif;
+    text-transform: uppercase;
+}
+
+.main-nav {
+    background: var(--royal-purple);
+    padding: 1.2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 5px solid var(--royal-gold);
+}
+
+.brand {
+    font-size: 1.5rem;
+    color: var(--royal-gold);
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.8rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--royal-gold);
+}
+
+.nav-cta {
+    background: var(--royal-gold) !important;
+    color: var(--royal-purple) !important;
+    padding: 10px 20px;
+    border-radius: 2px;
+}
+
+.page-header {
+    background: var(--royal-purple);
+    color: white;
+    padding: 80px 10%;
+    border-bottom: 20px solid var(--royal-gold);
+}
+
+.page-header h1 {
+    font-size: 4rem;
+    margin: 0;
+    line-height: 1;
+}
+
+/* FORM STYLING */
+.form-container {
+    padding: 60px 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-card {
+    background: var(--white);
+    width: 100%;
+    max-width: 600px;
+    padding: 50px;
+    border: 3px solid var(--royal-purple);
+    box-shadow: 20px 20px 0px var(--royal-gold); /* Aggressive Byzantine Shadow */
+}
+
+input, .fixed-textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+
+/* FIXED TEXT BOX */
+.fixed-textarea {
+    height: 180px;
+    resize: none; /* Prevents user resizing */
+}
+
+.submit-btn {
+    width: 100%;
+    background: var(--royal-purple);
+    color: var(--royal-gold);
+    padding: 20px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #000;
+    color: #fff;
+}

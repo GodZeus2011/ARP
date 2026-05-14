@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'Horizon-r'; 
+  src: url('font/Horizon_Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
