@@ -215,6 +215,10 @@ input, .fixed-textarea, select {
         padding: 15px 5% !important;
     }
 
+    .main-nav img {
+        padding-bottom: 10px;
+    }
+
     .nav-links {
         margin-top: 15px;
         flex-wrap: wrap;
