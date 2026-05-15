@@ -1,3 +1,4 @@
+/* 1. CUSTOM FONT INTEGRATION */
 @font-face {
   font-family: 'Horizon-r'; 
   src: url('Horizon_Regular.otf') format('opentype');
@@ -5,56 +6,48 @@
   font-style: normal;
 }
 
+/* 2. CORE VARIABLES */
 :root {
     --royal-purple: #702963;
     --royal-gold: #FFD700;
     --off-white: #F8F9FA;
     --white: #FFFFFF;
+    --dark-text: #1A1A1A;
 }
 
+/* 3. GLOBAL STYLES & TYPOGRAPHY */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, sans-serif;
     margin: 0;
-    background-color: var(--off-white);
+    background-color: var(--white);
+    color: var(--dark-text);
 }
 
-/* BRANDING & HEADERS */
-h1, h2, h3, .brand, .nav-links a, .submit-btn {
+h1, h2, h3, .brand, .nav-links a, .submit-btn, .section-title {
     font-family: 'Horizon-r', sans-serif;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* IMPROVED INFORMATION SPACING */
 p {
-    line-height: 1.8; /* Increases space between lines of text */
-    margin-bottom: 1.5rem; /* Space between paragraphs */
-    color: #333;
-    word-wrap: break-word;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
 }
 
 ul {
-    line-height: 2; /* Extra space for policy lists */
+    line-height: 2;
     margin-bottom: 2rem;
 }
 
 li {
-    margin-bottom: 10px; /* Space between bullet points */
+    margin-bottom: 10px;
 }
 
-h2, h3 {
-    margin-top: 2.5rem; /* Space above headers to separate sections */
-    margin-bottom: 1.2rem;
-    line-height: 1.2;
-}
-
-/* CONTAINER PADDING */
-section {
-    padding: 80px 10% !important; /* Standardizes the "breathability" of all pages */
-}
-
+/* 4. NAVIGATION BAR */
 .main-nav {
     background: var(--royal-purple);
-    padding: 1.2rem 5%;
+    padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,16 +58,21 @@ section {
 }
 
 .brand {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--royal-gold);
     text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
     margin-left: 20px;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     transition: color 0.3s;
 }
 
@@ -89,6 +87,7 @@ section {
     border-radius: 2px;
 }
 
+/* 5. HEADERS & CONTAINERS */
 .page-header {
     background: var(--royal-purple);
     color: white;
@@ -102,11 +101,71 @@ section {
     line-height: 1;
 }
 
-/* FORM STYLING */
-.form-container {
-    padding: 60px 10%;
+.content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+section {
+    padding: 80px 10%;
+}
+
+/* 6. PLATFORM & POLICY COMPONENTS */
+.section-title {
+    color: var(--royal-purple);
+    border-bottom: 3px solid var(--royal-gold);
+    display: inline-block;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.policy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.policy-card {
+    background: #fff;
+    padding: 30px;
+    border-left: 8px solid var(--royal-purple);
+    box-shadow: 10px 10px 0px var(--off-white);
+    border-radius: 4px;
+}
+
+.policy-box {
+    background: var(--off-white);
+    padding: 40px;
+    margin-bottom: 40px;
+    border: 2px dashed var(--royal-purple);
+}
+
+/* 7. IMAGES & PORTRAITS */
+.portrait-gallery {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.portrait-img {
+    height: 450px;
+    border: 5px solid var(--royal-purple);
+    box-shadow: 20px 20px 0px var(--royal-gold);
+}
+
+.coa-img {
+    height: 300px;
+    filter: drop-shadow(10px 10px 0px var(--royal-gold));
+}
+
+/* 8. FORMS & FIXED TEXTAREA */
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding: 60px 5%;
 }
 
 .form-card {
@@ -115,10 +174,10 @@ section {
     max-width: 600px;
     padding: 50px;
     border: 3px solid var(--royal-purple);
-    box-shadow: 20px 20px 0px var(--royal-gold); /* Aggressive Byzantine Shadow */
+    box-shadow: 20px 20px 0px var(--royal-gold);
 }
 
-input, .fixed-textarea {
+input, .fixed-textarea, select {
     width: 100%;
     padding: 15px;
     margin-bottom: 20px;
@@ -128,10 +187,9 @@ input, .fixed-textarea {
     font-size: 1rem;
 }
 
-/* FIXED TEXT BOX */
 .fixed-textarea {
     height: 180px;
-    resize: none; /* Prevents user resizing */
+    resize: none; /* User cannot drag-resize this box */
 }
 
 .submit-btn {
@@ -150,59 +208,11 @@ input, .fixed-textarea {
     color: #fff;
 }
 
-/* WRAPPER FOR CONTENT */
-.content-wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-/* SIDE-BY-SIDE GALLERY */
-/* Update this section in your style.css */
-.portrait-gallery {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
-.portrait-img {
-    height: 450px; /* Slightly larger since it is now the only image */
-    border: 5px solid var(--royal-purple);
-    box-shadow: 15px 15px 0px var(--royal-gold);
-}
-
-.coa-img {
-    height: 300px; /* COA usually looks better slightly smaller than the person */
-    filter: drop-shadow(5px 5px 0px var(--royal-gold));
-}
-
-/* Add this to style.css */
-.bio-text {
-    max-width: 800px; /* Limits width for better readability */
-    margin: 0 auto;   /* Centers the text block */
-    text-align: left; /* Keep text left-aligned for reading ease */
-}
-
-.bio-text, .form-container {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.bio-text h2 {
-    color: var(--royal-purple);
-    margin-bottom: 20px;
-}
-
-/* --- MOBILE RESPONSIVENESS --- */
-
+/* 9. MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-    /* 1. Stack the Nav Bar */
     .main-nav {
-        flex-direction: column;
-        padding: 1rem;
-        text-align: center;
+        flex-direction: column !important;
+        padding: 15px 5% !important;
     }
 
     .nav-links {
@@ -210,43 +220,35 @@ input, .fixed-textarea {
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
+        width: 100%;
     }
 
     .nav-links a {
-        margin-left: 0;
-        font-size: 0.7rem; /* Smaller text for tight screens */
+        margin: 0 5px !important;
+        font-size: 0.75rem !important;
     }
 
-    /* 2. Shrink the Headers */
     .page-header h1 {
         font-size: 2.5rem !important;
+        text-align: center;
     }
 
-    /* 3. Stack the Columns (Platform/About) */
-    .platform-grid, .portrait-gallery {
-        flex-direction: column;
-        display: block; /* Force vertical stacking */
+    .policy-grid {
+        grid-template-columns: 1fr; /* Stacks policies vertically */
     }
 
-    /* 4. Fix Image Sizes */
     .portrait-img {
-        height: auto;
-        width: 100%; /* Make Duke fill the width of the phone */
-        max-width: 300px;
-        margin-bottom: 20px;
-    }
-
-    .coa-img {
-        height: 150px;
-    }
-
-    /* 5. Clean up Form Cards */
-    .form-card {
-        padding: 30px 20px;
-        box-shadow: 10px 10px 0px var(--royal-gold); /* Smaller shadow for smaller screens */
+        height: auto !important;
+        width: 90% !important;
+        max-width: 320px;
     }
 
     section {
-        padding: 40px 5% !important; /* Less side-padding so text has room */
+        padding: 40px 5% !important;
+    }
+
+    .form-card {
+        padding: 30px 20px;
+        box-shadow: 10px 10px 0px var(--royal-gold);
     }
 }
