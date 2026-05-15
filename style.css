@@ -212,6 +212,7 @@ input, .fixed-textarea, select {
 @media (max-width: 768px) {
     .main-nav {
         flex-direction: column !important;
+        align-items: center;
         padding: 15px 5% !important;
     }
 
