@@ -24,6 +24,34 @@ h1, h2, h3, .brand, .nav-links a, .submit-btn {
     text-transform: uppercase;
 }
 
+/* IMPROVED INFORMATION SPACING */
+p {
+    line-height: 1.8; /* Increases space between lines of text */
+    margin-bottom: 1.5rem; /* Space between paragraphs */
+    color: #333;
+    word-wrap: break-word;
+}
+
+ul {
+    line-height: 2; /* Extra space for policy lists */
+    margin-bottom: 2rem;
+}
+
+li {
+    margin-bottom: 10px; /* Space between bullet points */
+}
+
+h2, h3 {
+    margin-top: 2.5rem; /* Space above headers to separate sections */
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+}
+
+/* CONTAINER PADDING */
+section {
+    padding: 80px 10% !important; /* Standardizes the "breathability" of all pages */
+}
+
 .main-nav {
     background: var(--royal-purple);
     padding: 1.2rem 5%;
@@ -46,7 +74,7 @@ h1, h2, h3, .brand, .nav-links a, .submit-btn {
     color: white;
     text-decoration: none;
     margin-left: 20px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     transition: color 0.3s;
 }
 
@@ -120,4 +148,105 @@ input, .fixed-textarea {
 .submit-btn:hover {
     background: #000;
     color: #fff;
+}
+
+/* WRAPPER FOR CONTENT */
+.content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* SIDE-BY-SIDE GALLERY */
+/* Update this section in your style.css */
+.portrait-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.portrait-img {
+    height: 450px; /* Slightly larger since it is now the only image */
+    border: 5px solid var(--royal-purple);
+    box-shadow: 15px 15px 0px var(--royal-gold);
+}
+
+.coa-img {
+    height: 300px; /* COA usually looks better slightly smaller than the person */
+    filter: drop-shadow(5px 5px 0px var(--royal-gold));
+}
+
+/* Add this to style.css */
+.bio-text {
+    max-width: 800px; /* Limits width for better readability */
+    margin: 0 auto;   /* Centers the text block */
+    text-align: left; /* Keep text left-aligned for reading ease */
+}
+
+.bio-text, .form-container {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.bio-text h2 {
+    color: var(--royal-purple);
+    margin-bottom: 20px;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+
+@media (max-width: 768px) {
+    /* 1. Stack the Nav Bar */
+    .main-nav {
+        flex-direction: column;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        font-size: 0.7rem; /* Smaller text for tight screens */
+    }
+
+    /* 2. Shrink the Headers */
+    .page-header h1 {
+        font-size: 2.5rem !important;
+    }
+
+    /* 3. Stack the Columns (Platform/About) */
+    .platform-grid, .portrait-gallery {
+        flex-direction: column;
+        display: block; /* Force vertical stacking */
+    }
+
+    /* 4. Fix Image Sizes */
+    .portrait-img {
+        height: auto;
+        width: 100%; /* Make Duke fill the width of the phone */
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .coa-img {
+        height: 150px;
+    }
+
+    /* 5. Clean up Form Cards */
+    .form-card {
+        padding: 30px 20px;
+        box-shadow: 10px 10px 0px var(--royal-gold); /* Smaller shadow for smaller screens */
+    }
+
+    section {
+        padding: 40px 5% !important; /* Less side-padding so text has room */
+    }
 }
